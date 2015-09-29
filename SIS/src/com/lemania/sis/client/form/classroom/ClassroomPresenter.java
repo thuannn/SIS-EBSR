@@ -19,7 +19,7 @@ import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.lemania.sis.client.AdminGateKeeper;
-import com.lemania.sis.client.form.mainpage.MainPagePresenter;
+import com.lemania.sis.client.form.ebsr.mainpage.MainPagePresenter;
 import com.lemania.sis.client.place.NameTokens;
 import com.lemania.sis.shared.classroom.ClassroomProxy;
 import com.lemania.sis.shared.classroom.ClassroomRequestFactory;

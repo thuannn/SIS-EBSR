@@ -13,7 +13,7 @@ import com.lemania.sis.client.event.LoginAuthenticatedEvent;
 import com.lemania.sis.client.event.LoginAuthenticatedEvent.LoginAuthenticatedHandler;
 import com.lemania.sis.client.event.ProfileBrancheAfterAddEvent;
 import com.lemania.sis.client.event.ProfileBrancheAfterAddEvent.ProfileBrancheAfterAddHandler;
-import com.lemania.sis.client.form.mainpage.MainPagePresenter;
+import com.lemania.sis.client.form.ebsr.mainpage.MainPagePresenter;
 import com.lemania.sis.client.place.NameTokens;
 import com.gwtplatform.mvp.client.annotations.UseGatekeeper;
 import com.lemania.sis.client.AdminGateKeeper;

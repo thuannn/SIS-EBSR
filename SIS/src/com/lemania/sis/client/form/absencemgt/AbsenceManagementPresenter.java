@@ -21,7 +21,7 @@ import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.ServerFailure;
 import com.lemania.sis.client.event.AbsenceAfterInputEvent;
 import com.lemania.sis.client.event.AbsenceAfterInputEvent.AbsenceAfterInputHandler;
-import com.lemania.sis.client.form.mainpage.MainPagePresenter;
+import com.lemania.sis.client.form.ebsr.mainpage.MainPagePresenter;
 import com.lemania.sis.shared.absenceitem.AbsenceItemProxy;
 import com.lemania.sis.shared.absenceitem.AbsenceItemRequestFactory;
 import com.lemania.sis.shared.absenceitem.AbsenceItemRequestFactory.AbsenceItemRequestContext;

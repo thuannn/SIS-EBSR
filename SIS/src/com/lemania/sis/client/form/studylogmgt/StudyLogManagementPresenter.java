@@ -27,7 +27,7 @@ import com.lemania.sis.client.LoggedInGatekeeper;
 import com.lemania.sis.client.UI.FieldValidation;
 import com.lemania.sis.client.event.LoginAuthenticatedEvent;
 import com.lemania.sis.client.event.LoginAuthenticatedEvent.LoginAuthenticatedHandler;
-import com.lemania.sis.client.form.mainpage.MainPagePresenter;
+import com.lemania.sis.client.form.ebsr.mainpage.MainPagePresenter;
 import com.lemania.sis.client.form.studylogmgt.StudyLogAssignmentLoadEvent.StudyLogAssignmentLoadHandler;
 import com.lemania.sis.client.form.studylogmgt.StudyLogClassLoadEvent.StudyLogClassLoadHandler;
 import com.lemania.sis.client.form.studylogmgt.StudyLogLoadLogsEvent.StudyLogLoadLogsHandler;

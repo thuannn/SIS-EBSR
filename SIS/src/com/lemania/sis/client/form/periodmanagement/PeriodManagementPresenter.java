@@ -22,7 +22,7 @@ import com.gwtplatform.mvp.client.annotations.UseGatekeeper;
 import com.lemania.sis.client.AdminGateKeeper;
 import com.lemania.sis.client.event.PeriodItemPopupCloseEvent;
 import com.lemania.sis.client.event.PeriodItemPopupCloseEvent.PeriodItemPopupCloseHandler;
-import com.lemania.sis.client.form.mainpage.MainPagePresenter;
+import com.lemania.sis.client.form.ebsr.mainpage.MainPagePresenter;
 import com.lemania.sis.client.place.NameTokens;
 import com.lemania.sis.client.popup.periodlistpopup.PeriodListPopupPresenter;
 import com.lemania.sis.client.values.NotificationValues;

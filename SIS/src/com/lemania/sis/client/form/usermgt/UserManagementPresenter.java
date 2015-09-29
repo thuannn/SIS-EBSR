@@ -18,7 +18,7 @@ import com.lemania.sis.client.event.StudentAfterAddEvent;
 import com.lemania.sis.client.event.StudentAfterAddEvent.StudentAfterAddHandler;
 import com.lemania.sis.client.event.StudentAfterStatusChangeEvent;
 import com.lemania.sis.client.event.StudentAfterStatusChangeEvent.StudentAfterStatusChangeHandler;
-import com.lemania.sis.client.form.mainpage.MainPagePresenter;
+import com.lemania.sis.client.form.ebsr.mainpage.MainPagePresenter;
 import com.lemania.sis.client.place.NameTokens;
 import com.lemania.sis.client.values.NotificationValues;
 import com.gwtplatform.mvp.client.annotations.UseGatekeeper;

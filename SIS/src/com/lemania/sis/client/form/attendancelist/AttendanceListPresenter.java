@@ -28,7 +28,7 @@ import com.lemania.sis.client.event.AttendanceListAssignmentSelectedEvent;
 import com.lemania.sis.client.event.AttendanceListAssignmentSelectedEvent.AttendanceListAssignmentSelectedHandler;
 import com.lemania.sis.client.event.LoginAuthenticatedEvent;
 import com.lemania.sis.client.event.LoginAuthenticatedEvent.LoginAuthenticatedHandler;
-import com.lemania.sis.client.form.mainpage.MainPagePresenter;
+import com.lemania.sis.client.form.ebsr.mainpage.MainPagePresenter;
 import com.lemania.sis.client.place.NameTokens;
 import com.lemania.sis.shared.ProfessorProxy;
 import com.lemania.sis.shared.absenceitem.AbsenceItemProxy;

@@ -21,7 +21,7 @@ import com.lemania.sis.client.event.ParentAfterAddEvent;
 import com.lemania.sis.client.event.ParentAfterAddEvent.ParentAfterAddHandler;
 import com.lemania.sis.client.event.ParentAfterUpdateEvent;
 import com.lemania.sis.client.event.ParentAfterUpdateEvent.ParentAfterUpdateHandler;
-import com.lemania.sis.client.form.mainpage.MainPagePresenter;
+import com.lemania.sis.client.form.ebsr.mainpage.MainPagePresenter;
 import com.lemania.sis.client.place.NameTokens;
 import com.lemania.sis.client.popup.parentprofile.ParentProfilePresenter;
 import com.lemania.sis.shared.parent.ParentProxy;

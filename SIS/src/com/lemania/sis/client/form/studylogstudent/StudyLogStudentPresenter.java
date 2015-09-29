@@ -24,7 +24,7 @@ import com.lemania.sis.client.CurrentUser;
 import com.lemania.sis.client.LoggedInGatekeeper;
 import com.lemania.sis.client.event.LoginAuthenticatedEvent;
 import com.lemania.sis.client.event.LoginAuthenticatedEvent.LoginAuthenticatedHandler;
-import com.lemania.sis.client.form.mainpage.MainPagePresenter;
+import com.lemania.sis.client.form.ebsr.mainpage.MainPagePresenter;
 import com.lemania.sis.client.form.studylogstudent.StudyLogStudentLoadLogsEvent.StudyLogStudentLoadLogsHandler;
 import com.lemania.sis.client.place.NameTokens;
 import com.lemania.sis.client.values.DataValues;

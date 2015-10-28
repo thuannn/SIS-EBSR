@@ -21,6 +21,7 @@ public class ProfileSubject extends DatastoreObject {
 	private Key<Professor> professor2;
 	//
 	private String subjectName = "";
+	private String subjectName2 = "";
 	private Double subjectCoef;
 	//
 	private String profName = "";
@@ -132,5 +133,13 @@ public class ProfileSubject extends DatastoreObject {
 
 	public void setProf2Name(String prof2Name) {
 		this.prof2Name = prof2Name;
+	}
+
+	public String getSubjectName2() {
+		return subjectName2;
+	}
+
+	public void setSubjectName2(String subjectName2) {
+		this.subjectName2 = subjectName2;
 	}
 }

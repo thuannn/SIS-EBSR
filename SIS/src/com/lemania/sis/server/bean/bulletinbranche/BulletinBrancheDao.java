@@ -6,11 +6,11 @@ import java.util.List;
 
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.cmd.Query;
-import com.lemania.sis.server.Branche;
 import com.lemania.sis.server.Profile;
-import com.lemania.sis.server.ProfileBranche;
+import com.lemania.sis.server.bean.branche.Branche;
 import com.lemania.sis.server.bean.bulletin.Bulletin;
 import com.lemania.sis.server.bean.bulletinsubject.BulletinSubject;
+import com.lemania.sis.server.bean.profilebranche.ProfileBranche;
 import com.lemania.sis.server.bean.profilesubject.ProfileSubject;
 import com.lemania.sis.server.service.MyDAOBase;
 
@@ -30,6 +30,7 @@ public class BulletinBrancheDao extends MyDAOBase {
 		List<BulletinBranche> returnList = new ArrayList<BulletinBranche>();
 		for (BulletinBranche bulletinBranche : q){
 			bulletinBranche.setBulletinBrancheName( ofy().load().key( bulletinBranche.getBulletinBranche()).now().getBrancheName() );
+			bulletinBranche.setBulletinBrancheName2( ofy().load().key( bulletinBranche.getBulletinBranche()).now().getBrancheName2() );
 			returnList.add(bulletinBranche);
 		}
 		return returnList;
@@ -57,6 +58,7 @@ public class BulletinBrancheDao extends MyDAOBase {
 		List<BulletinBranche> returnList = new ArrayList<BulletinBranche>();
 		for ( BulletinBranche bulletinBranche : q ){
 			bulletinBranche.setBulletinBrancheName( ofy().load().key( bulletinBranche.getBulletinBranche()).now().getBrancheName() );
+			bulletinBranche.setBulletinBrancheName2( ofy().load().key( bulletinBranche.getBulletinBranche()).now().getBrancheName2() );
 			returnList.add( bulletinBranche );
 		}
 		Collections.sort(returnList);
@@ -73,6 +75,7 @@ public class BulletinBrancheDao extends MyDAOBase {
 		List<BulletinBranche> returnList = new ArrayList<BulletinBranche>();
 		for ( BulletinBranche bulletinBranche : q ){
 			bulletinBranche.setBulletinBrancheName( ofy().load().key( bulletinBranche.getBulletinBranche()).now().getBrancheName() );
+			bulletinBranche.setBulletinBrancheName2( ofy().load().key( bulletinBranche.getBulletinBranche()).now().getBrancheName2() );
 			returnList.add( bulletinBranche );
 		}
 		Collections.sort(returnList);
@@ -97,6 +100,7 @@ public class BulletinBrancheDao extends MyDAOBase {
 			for ( BulletinBranche bulletinBranche : q ){
 				bulletinBranche.setBulletinSubjectId( subject.getId() );
 				bulletinBranche.setBulletinBrancheName( ofy().load().key( bulletinBranche.getBulletinBranche()).now().getBrancheName() );
+				bulletinBranche.setBulletinBrancheName2( ofy().load().key( bulletinBranche.getBulletinBranche()).now().getBrancheName2() );
 				returnList.add( bulletinBranche );
 			}
 		}
@@ -122,6 +126,7 @@ public class BulletinBrancheDao extends MyDAOBase {
 		try {
 			BulletinBranche ps = ofy().load().key(key).now();
 			ps.setBulletinBrancheName( ofy().load().key( ps.getBulletinBranche()).now().getBrancheName() );
+			ps.setBulletinBrancheName2( ofy().load().key( ps.getBulletinBranche()).now().getBrancheName2() );
 			return ps;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
@@ -138,6 +143,7 @@ public class BulletinBrancheDao extends MyDAOBase {
 		ps.setBulletinSubject( Key.create( BulletinSubject.class, Long.parseLong(bulletinSubjectId)) );
 		ps.setBulletinBranche(Key.create( Branche.class, Long.parseLong(brancheId)) );
 		ps.setBulletinBrancheName( ofy().load().key( ps.getBulletinBranche()).now().getBrancheName() );
+		ps.setBulletinBrancheName2( ofy().load().key( ps.getBulletinBranche()).now().getBrancheName2() );
 		ps.setBrancheCoef( Double.parseDouble(brancheCoef) );
 		
 		Key<BulletinBranche> key = ofy().save().entities( ps ).now().keySet().iterator().next();
@@ -190,6 +196,7 @@ public class BulletinBrancheDao extends MyDAOBase {
 			curBulletinBranche.setBulletinBranche( profileBranche.getProfileBranche() );
 			curBulletinBranche.setBrancheCoef( profileBranche.getBrancheCoef() );
 			curBulletinBranche.setBulletinBrancheName( profileBranche.getProfileBrancheName() );
+			curBulletinBranche.setBulletinBrancheName2( profileBranche.getProfileBrancheName2() );
 			curBulletinBranche.setBulletinSubject( Key.create(BulletinSubject.class, bulletinSubject.getId()));
 			//
 			key = ofy().save().entities(curBulletinBranche).now().keySet().iterator().next();
@@ -215,6 +222,7 @@ public class BulletinBrancheDao extends MyDAOBase {
 			//
 			bb.setBulletinBranche( keyBranche );
 			bb.setBulletinBrancheName( branche.getBrancheName() );
+			bb.setBulletinBrancheName2( branche.getBrancheName2() );
 			bb.setBrancheCoef( Double.parseDouble(coef) );
 			//
 			Key<BulletinBranche> keyBulletinBranche = ofy().save().entities(bb).now().keySet().iterator().next();

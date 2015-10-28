@@ -8,11 +8,11 @@ import java.util.List;
 import com.lemania.sis.client.values.DataValues;
 import com.lemania.sis.server.bean.parent.Parent;
 import com.lemania.sis.server.bean.professor.Professor;
+import com.lemania.sis.server.bean.profilebranche.ProfileBranche;
 import com.lemania.sis.server.bean.profilesubject.ProfileSubject;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.cmd.Query;
 import com.lemania.sis.server.Profile;
-import com.lemania.sis.server.ProfileBranche;
 import com.lemania.sis.server.Subject;
 import com.lemania.sis.server.bean.bulletinbranche.BulletinBranche;
 import com.lemania.sis.server.bean.bulletinsubject.BulletinSubject;
@@ -421,6 +421,8 @@ public class BulletinDao extends MyDAOBase {
 				curBulletinSubject.setProf2Name( profileSubject.getProf2Name() );
 				//
 				curBulletinSubject.setSubjectName( profileSubject.getSubjectName() );
+				curBulletinSubject.setSubjectName2( profileSubject.getSubjectName2() );
+				//
 				curBulletinSubject.setSubjectCoef( profileSubject.getSubjectCoef() );
 				keyListSubject.add( ofy().save().entities(curBulletinSubject).now().keySet().iterator().next() );
 				//
@@ -431,7 +433,10 @@ public class BulletinDao extends MyDAOBase {
 					curBulletinBranche = new BulletinBranche();
 					curBulletinBranche.setBulletinBranche( profileBranche.getProfileBranche() );
 					curBulletinBranche.setBrancheCoef( profileBranche.getBrancheCoef() );
+					//
 					curBulletinBranche.setBulletinBrancheName( profileBranche.getProfileBrancheName() );
+					curBulletinBranche.setBulletinBrancheName2( profileBranche.getProfileBrancheName2() );
+					//
 					curBulletinBranche.setBulletinSubject( Key.create(BulletinSubject.class, curBulletinSubject.getId()));
 					keyListBranche.add( ofy().save().entities(curBulletinBranche).now().keySet().iterator().next() );
 				}

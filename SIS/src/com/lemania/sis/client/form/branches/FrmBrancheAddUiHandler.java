@@ -4,5 +4,5 @@ import com.gwtplatform.mvp.client.UiHandlers;
 
 public interface FrmBrancheAddUiHandler extends UiHandlers {
 	//
-	public void addNewBranche(String brancheName, String brancheCoef, Boolean brancheActive);
+	public void addNewBranche(String brancheName, String brancheName2, String brancheCoef, Boolean brancheActive);
 }

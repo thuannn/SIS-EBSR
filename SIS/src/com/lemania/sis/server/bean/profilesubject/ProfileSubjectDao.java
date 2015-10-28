@@ -6,10 +6,10 @@ import java.util.List;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.cmd.Query;
 import com.lemania.sis.server.Profile;
-import com.lemania.sis.server.ProfileBranche;
 import com.lemania.sis.server.Subject;
 import com.lemania.sis.server.bean.classe.Classe;
 import com.lemania.sis.server.bean.professor.Professor;
+import com.lemania.sis.server.bean.profilebranche.ProfileBranche;
 import com.lemania.sis.server.service.MyDAOBase;
 
 public class ProfileSubjectDao extends MyDAOBase {
@@ -33,6 +33,7 @@ public class ProfileSubjectDao extends MyDAOBase {
 				profileSubject.setProf2Name( ofy().load().key(profileSubject.getProfessor2()).now().getProfName() );
 			//
 			profileSubject.setSubjectName( ofy().load().key( profileSubject.getSubject()).now().getSubjectName() );
+			profileSubject.setSubjectName2( ofy().load().key( profileSubject.getSubject()).now().getSubjectName2() );
 			//
 			returnList.add(profileSubject);
 		}
@@ -56,6 +57,8 @@ public class ProfileSubjectDao extends MyDAOBase {
 				profileSubject.setProf2Name( ofy().load().key(profileSubject.getProfessor2()).now().getProfName() );
 			//
 			profileSubject.setSubjectName( ofy().load().key( profileSubject.getSubject()).now().getSubjectName() );
+			profileSubject.setSubjectName2( ofy().load().key( profileSubject.getSubject()).now().getSubjectName2() );
+			//
 			returnList.add( profileSubject );
 		}
 		return returnList;
@@ -78,6 +81,8 @@ public class ProfileSubjectDao extends MyDAOBase {
 				profileSubject.setProf2Name( ofy().load().key(profileSubject.getProfessor2()).now().getProfName() );
 			//
 			profileSubject.setSubjectName( ofy().load().key( profileSubject.getSubject()).now().getSubjectName() );
+			profileSubject.setSubjectName2( ofy().load().key( profileSubject.getSubject()).now().getSubjectName2() );
+			//
 			returnList.add( profileSubject );
 		}
 		return returnList;
@@ -106,6 +111,8 @@ public class ProfileSubjectDao extends MyDAOBase {
 				ps.setProf2Name( ofy().load().key(ps.getProfessor2()).now().getProfName() );
 			//
 			ps.setSubjectName( ofy().load().key( ps.getSubject()).now().getSubjectName() );
+			ps.setSubjectName2( ofy().load().key( ps.getSubject()).now().getSubjectName2() );
+			//
 			return ps;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
@@ -141,6 +148,8 @@ public class ProfileSubjectDao extends MyDAOBase {
 				ps.setProf2Name( ofy().load().key(ps.getProfessor2()).now().getProfName() );
 			//
 			ps.setSubjectName( ofy().load().key( ps.getSubject()).now().getSubjectName() );
+			ps.setSubjectName2( ofy().load().key( ps.getSubject()).now().getSubjectName2() );
+			//
 			return ps;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
@@ -176,6 +185,8 @@ public class ProfileSubjectDao extends MyDAOBase {
 		}
 		//
 		ps.setSubjectName( ofy().load().key( ps.getSubject()).now().getSubjectName() );
+		ps.setSubjectName2( ofy().load().key( ps.getSubject()).now().getSubjectName2() );
+		//
 		ps.setSubjectCoef( Double.parseDouble(subjectCoef));
 		//
 		Key<ProfileSubject> key = ofy().save().entities( ps ).now().keySet().iterator().next();

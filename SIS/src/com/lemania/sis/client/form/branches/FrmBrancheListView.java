@@ -10,7 +10,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.lemania.sis.client.values.NotificationValues;
-import com.lemania.sis.shared.BrancheProxy;
+import com.lemania.sis.shared.branche.BrancheProxy;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.DataGrid;
@@ -62,7 +62,27 @@ public class FrmBrancheListView extends ViewWithUiHandlers<FrmBrancheListUiHandl
 	    	public void update(int index, BrancheProxy branche, String value){
 	    		if (getUiHandlers() != null) {	    			
 	    			selectedBranche = index;
-	    			getUiHandlers().updateBranche( branche, value, branche.getDefaultCoef().toString(), branche.getIsActive() );
+	    			getUiHandlers().updateBranche( branche, value, branche.getBrancheName2(), branche.getDefaultCoef().toString(), branche.getIsActive() );
+	    		}	    		
+	    	}
+	    });
+	    
+	    //
+		// Add a text column to show the english name.
+	    Column<BrancheProxy, String> colBrancheName2 = new Column<BrancheProxy, String>(new EditTextCell()) {
+	      @Override
+	      public String getValue(BrancheProxy object) {
+	        return object.getBrancheName2();
+	      }
+	    };
+	    tblBranche.addColumn(colBrancheName2, "Nom EN");
+	    // Field updater
+	    colBrancheName2.setFieldUpdater(new FieldUpdater<BrancheProxy, String>(){
+	    	@Override
+	    	public void update(int index, BrancheProxy branche, String value){
+	    		if (getUiHandlers() != null) {	    			
+	    			selectedBranche = index;
+	    			getUiHandlers().updateBranche( branche, branche.getBrancheName(), value, branche.getDefaultCoef().toString(), branche.getIsActive() );
 	    		}	    		
 	    	}
 	    });
@@ -81,7 +101,7 @@ public class FrmBrancheListView extends ViewWithUiHandlers<FrmBrancheListUiHandl
 	    	public void update(int index, BrancheProxy branche, String value){
 	    		if (getUiHandlers() != null) {	    			
 	    			selectedBranche = index;
-	    			getUiHandlers().updateBranche( branche, branche.getBrancheName(), value, branche.getIsActive() );
+	    			getUiHandlers().updateBranche( branche, branche.getBrancheName(), branche.getBrancheName2(), value, branche.getIsActive() );
 	    		}	    		
 	    	}
 	    });
@@ -101,7 +121,7 @@ public class FrmBrancheListView extends ViewWithUiHandlers<FrmBrancheListUiHandl
 	    	public void update(int index, BrancheProxy branche, Boolean value){
 	    		if (getUiHandlers() != null) {	    			
 	    			selectedBranche = index;
-	    			getUiHandlers().updateBranche( branche, branche.getBrancheName(), branche.getDefaultCoef().toString(), value );
+	    			getUiHandlers().updateBranche( branche, branche.getBrancheName(), branche.getBrancheName2(), branche.getDefaultCoef().toString(), value );
 	    		}	    		
 	    	}
 	    });

@@ -27,12 +27,12 @@ import com.google.web.bindery.requestfactory.shared.Receiver;
 import com.google.web.bindery.requestfactory.shared.ServerFailure;
 import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 import com.lemania.sis.client.values.NotificationValues;
-import com.lemania.sis.shared.BrancheProxy;
+import com.lemania.sis.shared.branche.BrancheProxy;
+import com.lemania.sis.shared.branche.BrancheRequestFactory;
+import com.lemania.sis.shared.branche.BrancheRequestFactory.BrancheRequestContext;
 import com.lemania.sis.shared.bulletinbranche.BulletinBrancheRequestFactory;
 import com.lemania.sis.shared.bulletinbranche.BulletinBrancheRequestFactory.BulletinBrancheRequestContext;
 import com.lemania.sis.shared.service.EventSourceRequestTransport;
-import com.lemania.sis.shared.service.BrancheRequestFactory;
-import com.lemania.sis.shared.service.BrancheRequestFactory.BrancheRequestContext;
 
 public class FrmBrancheListPresenter
 		extends Presenter<FrmBrancheListPresenter.MyView, FrmBrancheListPresenter.MyProxy>
@@ -120,7 +120,7 @@ public class FrmBrancheListPresenter
 
 	// Update a branche, then update the datagrid
 	@Override
-	public void updateBranche(BrancheProxy branche, String brancheName, String brancheCoef, Boolean isActive) {
+	public void updateBranche(BrancheProxy branche, String brancheName, String brancheName2, String brancheCoef, Boolean isActive) {
 		//
 		if (this.currentUser.isReadOnly()){
 			Window.alert(NotificationValues.readOnly);
@@ -151,8 +151,9 @@ public class FrmBrancheListPresenter
 		// Update
 		BrancheRequestContext rc = getBrancheRequestContext();
 		branche = rc.edit(branche);
-		branche.setBrancheName(brancheName);
-		branche.setDefaultCoef(Double.parseDouble(brancheCoef));
+		branche.setBrancheName( brancheName );
+		branche.setBrancheName2( brancheName2 );
+		branche.setDefaultCoef( Double.parseDouble(brancheCoef) );
 		branche.setIsActive(isActive);
 		
 		rc.saveAndReturn(branche).fire(new Receiver<BrancheProxy>(){

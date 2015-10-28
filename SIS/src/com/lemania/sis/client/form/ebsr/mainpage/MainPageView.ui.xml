@@ -147,14 +147,14 @@
 										<g:Hyperlink targetHistoryToken="studylogstudent"
 											text="Liste par élève" ui:field="cmdStudyLogStudent" />
 									</g:TreeItem>
-									<g:TreeItem text="Evaluation Intermediaire">
-										<g:Hyperlink targetHistoryToken="evaluationlist"
-											text="Liste des rapports d&apos;évaluation" ui:field="cmdEvaluationList" />
-										<g:Hyperlink targetHistoryToken="evaluationinput"
-											text="Saisir les évaluations" ui:field="cmdEvaluationInputProf" />
-										<g:Hyperlink targetHistoryToken="evaluationinputstudent"
-											text="Evaluations par élève" ui:field="cmdEvaluationInputEleve" />
-									</g:TreeItem>
+<!-- 									<g:TreeItem text="Evaluation Intermediaire"> -->
+<!-- 										<g:Hyperlink targetHistoryToken="evaluationlist" -->
+<!-- 											text="Liste des rapports d&apos;évaluation" ui:field="cmdEvaluationList" /> -->
+<!-- 										<g:Hyperlink targetHistoryToken="evaluationinput" -->
+<!-- 											text="Saisir les évaluations" ui:field="cmdEvaluationInputProf" /> -->
+<!-- 										<g:Hyperlink targetHistoryToken="evaluationinputstudent" -->
+<!-- 											text="Evaluations par élève" ui:field="cmdEvaluationInputEleve" /> -->
+<!-- 									</g:TreeItem> -->
 
 									<g:TreeItem text="Notes">
 										<g:Hyperlink text="Saisir les notes"
@@ -164,18 +164,20 @@
 <!-- 										<g:Hyperlink text="Imprimer les bulletins" -->
 <!-- 											targetHistoryToken="bulletin" ui:field="cmdBulletin" /> -->
 									</g:TreeItem>
-									<g:TreeItem text="Horaires" ui:field="tiTimetable">
-										<g:Hyperlink targetHistoryToken="masteragenda"
-											text="Horaires cadres" ui:field="cmdMasterAgendaPage" />
-										<g:TreeItem text="Horaires personnalisés">
-											<g:Hyperlink targetHistoryToken="studentagenda"
-												text="Elèves" ui:field="cmdStudentAgendaPage" />
-											<g:Hyperlink targetHistoryToken="profagenda"
-												text="Professeurs" ui:field="cmdProfessorAgendaPage" />
-											<g:Hyperlink targetHistoryToken="masteragenda"
-												text="Classes" ui:field="cmdClassAgendaPage" />
-										</g:TreeItem>
-									</g:TreeItem>
+									
+<!-- 									<g:TreeItem text="Horaires" ui:field="tiTimetable"> -->
+<!-- 										<g:Hyperlink targetHistoryToken="masteragenda" -->
+<!-- 											text="Horaires cadres" ui:field="cmdMasterAgendaPage" /> -->
+<!-- 										<g:TreeItem text="Horaires personnalisés"> -->
+<!-- 											<g:Hyperlink targetHistoryToken="studentagenda" -->
+<!-- 												text="Elèves" ui:field="cmdStudentAgendaPage" /> -->
+<!-- 											<g:Hyperlink targetHistoryToken="profagenda" -->
+<!-- 												text="Professeurs" ui:field="cmdProfessorAgendaPage" /> -->
+<!-- 											<g:Hyperlink targetHistoryToken="masteragenda" -->
+<!-- 												text="Classes" ui:field="cmdClassAgendaPage" /> -->
+<!-- 										</g:TreeItem> -->
+<!-- 									</g:TreeItem> -->
+									
 									<g:TreeItem text="Paramètres">
 										<g:TreeItem text="Absences" ui:field="tiParamAbsences">
 											<g:Hyperlink text="Motifs d’absences"

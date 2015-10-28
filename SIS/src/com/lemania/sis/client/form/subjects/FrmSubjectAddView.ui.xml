@@ -15,55 +15,55 @@
 				horizontalAlignment="ALIGN_CENTER" />
 
 			<g:VerticalPanel spacing="10">
-			<c:FramedPanel ui:field="form1" headingText="Modifier le mot de passe"
-				width="500" bodyStyle="background: none; padding: 10px;">
-				<g:Grid cellPadding="5" cellSpacing="5" width="80%">
-					<g:row>
-						<g:customCell>
-							<g:Label text="Nom de la matière :" />
-						</g:customCell>
-						<g:customCell>
-							<g:TextBox styleName="sis_textbox" ui:field="txtSubjectName" />
-						</g:customCell>
-					</g:row>
-					<g:row>
-						<g:customCell>
-							<g:Label text="Nom anglais de la matière :" />
-						</g:customCell>
-						<g:customCell>
-							<g:TextBox styleName="sis_textbox" ui:field="txtSubjectName2" />
-						</g:customCell>
-					</g:row>
-					<g:row>
-						<g:customCell>
-							<g:Label text="Coefficient par défaut :" />
-						</g:customCell>
-						<g:customCell>
-							<g:TextBox ui:field="txtDefaultCoef" />
-						</g:customCell>
-					</g:row>
-					<g:row>
-						<g:customCell>
-							<g:Label text="." styleName="hiddenText" />
-						</g:customCell>
-						<g:customCell>
-							<g:CheckBox text="Active" checked="true" ui:field="chkActive"/>
-						</g:customCell>
-					</g:row>
-					<g:row>
-						<g:customCell>
-							<g:Label text="." styleName="hiddenText" />
-						</g:customCell>
-						<g:customCell>
-							<g:Label ui:field="lblStatus" />
-						</g:customCell>
-					</g:row>
-				</g:Grid>
-				
-				<c:button>
+				<c:FramedPanel ui:field="form1" headingText="Nouvelle matière"
+					width="500" bodyStyle="background: none; padding: 10px;">
+					<g:Grid cellPadding="5" cellSpacing="5" width="80%">
+						<g:row>
+							<g:customCell>
+								<g:Label text="Nom de la matière :" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox styleName="sis_textbox" ui:field="txtSubjectName" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Nom anglais de la matière :" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox styleName="sis_textbox" ui:field="txtSubjectName2" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="Coefficient par défaut :" />
+							</g:customCell>
+							<g:customCell>
+								<g:TextBox ui:field="txtDefaultCoef" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="." styleName="hiddenText" />
+							</g:customCell>
+							<g:customCell>
+								<g:CheckBox text="Active" checked="true" ui:field="chkActive" />
+							</g:customCell>
+						</g:row>
+						<g:row>
+							<g:customCell>
+								<g:Label text="." styleName="hiddenText" />
+							</g:customCell>
+							<g:customCell>
+								<g:Label ui:field="lblStatus" />
+							</g:customCell>
+						</g:row>
+					</g:Grid>
+
+					<c:button>
 						<button:TextButton text="Enregistrer" ui:field="cmdSave" />
 					</c:button>
-			</c:FramedPanel>
+				</c:FramedPanel>
 			</g:VerticalPanel>
 		</g:VerticalPanel>
 	</g:HTMLPanel>

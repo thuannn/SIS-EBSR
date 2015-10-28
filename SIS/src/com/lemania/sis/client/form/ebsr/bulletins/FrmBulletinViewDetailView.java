@@ -247,7 +247,7 @@ public class FrmBulletinViewDetailView extends ViewWithUiHandlers<FrmBulletinVie
 		tblBulletin.setText(rowCount, 7, "T1");
 		tblBulletin.setText(rowCount, 13, "T2");
 		tblBulletin.setText(rowCount, 19, "T3");
-		tblBulletin.setText(rowCount, 20, "Moyenne Annuelle");		
+		tblBulletin.setText(rowCount, 20, "");		
 		tblBulletin.getRowFormatter().setStyleName(rowCount, "bulletinHeader");
 		//
 		for (BulletinSubjectProxy subject : subjects){
@@ -257,7 +257,8 @@ public class FrmBulletinViewDetailView extends ViewWithUiHandlers<FrmBulletinVie
 			tblBulletin.setText(rowCount, 7, subject.getT1());
 			tblBulletin.setText(rowCount, 13, subject.getT2());
 			tblBulletin.setText(rowCount, 19, subject.getT3());
-			tblBulletin.setText(rowCount, 20, subject.getAn());			
+//			tblBulletin.setText(rowCount, 20, subject.getAn());
+			tblBulletin.setText(rowCount, 20, subject.getSubjectName2());
 			if (hideRemark)
 				tblBulletin.setText(rowCount+1, 20, "");
 			else
@@ -299,11 +300,14 @@ public class FrmBulletinViewDetailView extends ViewWithUiHandlers<FrmBulletinVie
 					tblBulletin.setText(rowCount, 17, branche.getT3_4());
 					tblBulletin.setText(rowCount, 18, branche.getT3_5());
 					tblBulletin.setText(rowCount, 19, branche.getT3());
+					//
+					tblBulletin.setText(rowCount, 20, branche.getBulletinBrancheName2() );
 				}
 			}
 			//
-			if (brancheCount>0)
-				tblBulletin.getFlexCellFormatter().setRowSpan((rowCount-brancheCount+1), 20, brancheCount);
+			// 20151027 - EBSR Bulletin
+//			if (brancheCount>0)
+//				tblBulletin.getFlexCellFormatter().setRowSpan((rowCount-brancheCount+1), 20, brancheCount);
 			//
 			rowCount++;
 			tblBulletin.setText(rowCount, 0, "");

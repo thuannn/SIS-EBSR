@@ -7,11 +7,9 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.lemania.sis.client.values.AppSettingValues;
 import com.lemania.sis.client.values.NotificationValues;
-import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FocusWidget;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Hyperlink;
@@ -21,22 +19,14 @@ import com.google.gwt.user.client.ui.PopupPanel;
 import com.lemania.sis.client.CurrentUser;
 import com.sencha.gxt.core.client.Style.LayoutRegion;
 import com.sencha.gxt.core.client.dom.ScrollSupport.ScrollMode;
-import com.sencha.gxt.widget.core.client.ContentPanel;
 import com.sencha.gxt.widget.core.client.container.BorderLayoutContainer;
-import com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData;
 import com.sencha.gxt.widget.core.client.container.FlowLayoutContainer;
-import com.sencha.gxt.widget.core.client.container.MarginData;
-import com.sencha.gxt.widget.core.client.container.SimpleContainer;
 import com.google.gwt.user.client.ui.Tree;
-import com.google.gwt.user.client.ui.DockPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.logical.shared.ResizeEvent;
-import com.google.gwt.event.logical.shared.ResizeHandler;
-import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.TreeItem;
 
 public class MainPageView extends ViewWithUiHandlers<MainPageUiHandler> implements MainPagePresenter.MyView {
@@ -92,24 +82,24 @@ public class MainPageView extends ViewWithUiHandlers<MainPageUiHandler> implemen
 	@UiField Hyperlink cmdHelpStudent;
 	@UiField Image imgLogo;
 	@UiField Label txtCopyright;
-	@UiField Hyperlink cmdEvaluationList;
-	@UiField Hyperlink cmdEvaluationInputProf;
-	@UiField Hyperlink cmdEvaluationInputEleve;
+//	@UiField Hyperlink cmdEvaluationList;
+//	@UiField Hyperlink cmdEvaluationInputProf;
+//	@UiField Hyperlink cmdEvaluationInputEleve;
 	@UiField Hyperlink cmdEvaluationInputProfProf;
 	@UiField Hyperlink cmdEvaluationInputEleveProf;
 	@UiField Hyperlink cmdClassroomPage;
-	@UiField Hyperlink cmdMasterAgendaPage;
+//	@UiField Hyperlink cmdMasterAgendaPage;
 	@UiField Hyperlink cmdPeriodMgt;
-	@UiField Hyperlink cmdStudentAgendaPage;
-	@UiField Hyperlink cmdClassAgendaPage;
-	@UiField Hyperlink cmdProfessorAgendaPage;
+//	@UiField Hyperlink cmdStudentAgendaPage;
+//	@UiField Hyperlink cmdClassAgendaPage;
+//	@UiField Hyperlink cmdProfessorAgendaPage;
 	@UiField Hyperlink cmdParentMgt;
 	@UiField Hyperlink cmdMotifAbsence;
 	@UiField Hyperlink cmdAttendanceListProf;
 	@UiField Hyperlink cmdAbsenceMgt;
 	@UiField VerticalPanel leftPanel;
 	@UiField TreeItem tiAbsences;
-	@UiField TreeItem tiTimetable;
+//	@UiField TreeItem tiTimetable;
 	@UiField TreeItem tiParamAbsences;
 	@UiField TreeItem tiAbsencesProf;
 	@UiField Hyperlink cmdMarkViewParent;
@@ -587,41 +577,41 @@ public class MainPageView extends ViewWithUiHandlers<MainPageUiHandler> implemen
 		//
 		switchButton( (Hyperlink)event.getSource() );
 	}
-	@UiHandler("cmdEvaluationList")
-	void onCmdEvaluationListClick(ClickEvent event) {
-		//
-		switchButton( (Hyperlink)event.getSource() );
-	}
-	@UiHandler("cmdEvaluationInputProf")
-	void onCmdEvaluationInputProfClick(ClickEvent event) {
-		//
-		switchButton( (Hyperlink)event.getSource() );
-	}
-	@UiHandler("cmdEvaluationInputEleve")
-	void onCmdEvaluationInputEleveClick(ClickEvent event) {
-		//
-		switchButton( (Hyperlink)event.getSource() );
-	}
-	@UiHandler("cmdMasterAgendaPage")
-	void onCmdMasterAgendaPageClick(ClickEvent event) {
-		//
-		switchButton( (Hyperlink)event.getSource() );
-	}
-	@UiHandler("cmdStudentAgendaPage")
-	void onCmdStudentAgendaPageClick(ClickEvent event) {
-		//
-		switchButton( (Hyperlink)event.getSource() );
-	}
-	@UiHandler("cmdProfessorAgendaPage")
-	void onCmdProfessorAgendaPageClick(ClickEvent event) {
-		//
-		switchButton( (Hyperlink)event.getSource() );
-	}
-	@UiHandler("cmdClassAgendaPage")
-	void onCmdClassAgendaPageClick(ClickEvent event) {
-		//
-		switchButton( (Hyperlink)event.getSource() );
-	}
+//	@UiHandler("cmdEvaluationList")
+//	void onCmdEvaluationListClick(ClickEvent event) {
+//		//
+//		switchButton( (Hyperlink)event.getSource() );
+//	}
+//	@UiHandler("cmdEvaluationInputProf")
+//	void onCmdEvaluationInputProfClick(ClickEvent event) {
+//		//
+//		switchButton( (Hyperlink)event.getSource() );
+//	}
+//	@UiHandler("cmdEvaluationInputEleve")
+//	void onCmdEvaluationInputEleveClick(ClickEvent event) {
+//		//
+//		switchButton( (Hyperlink)event.getSource() );
+//	}
+//	@UiHandler("cmdMasterAgendaPage")
+//	void onCmdMasterAgendaPageClick(ClickEvent event) {
+//		//
+//		switchButton( (Hyperlink)event.getSource() );
+//	}
+//	@UiHandler("cmdStudentAgendaPage")
+//	void onCmdStudentAgendaPageClick(ClickEvent event) {
+//		//
+//		switchButton( (Hyperlink)event.getSource() );
+//	}
+//	@UiHandler("cmdProfessorAgendaPage")
+//	void onCmdProfessorAgendaPageClick(ClickEvent event) {
+//		//
+//		switchButton( (Hyperlink)event.getSource() );
+//	}
+//	@UiHandler("cmdClassAgendaPage")
+//	void onCmdClassAgendaPageClick(ClickEvent event) {
+//		//
+//		switchButton( (Hyperlink)event.getSource() );
+//	}
 	@UiHandler("cmdMotifAbsence")
 	void onCmdMotifAbsenceClick(ClickEvent event) {
 		//

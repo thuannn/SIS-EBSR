@@ -13,6 +13,9 @@ public interface BulletinSubjectProxy extends EntityProxy {
 	public String getSubjectName();
 	public void setSubjectName(String subjectName);
 	
+	public String getSubjectName2();
+	public void setSubjectName2(String subjectName2);
+	
 	public Double getSubjectCoef();
 	public void setSubjectCoef(Double subjectCoef);
 	

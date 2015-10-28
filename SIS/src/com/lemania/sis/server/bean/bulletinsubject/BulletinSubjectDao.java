@@ -8,12 +8,12 @@ import java.util.List;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.cmd.Query;
 import com.lemania.sis.server.Profile;
-import com.lemania.sis.server.ProfileBranche;
 import com.lemania.sis.server.Subject;
 import com.lemania.sis.server.bean.assignment.Assignment;
 import com.lemania.sis.server.bean.bulletin.Bulletin;
 import com.lemania.sis.server.bean.bulletinbranche.BulletinBranche;
 import com.lemania.sis.server.bean.professor.Professor;
+import com.lemania.sis.server.bean.profilebranche.ProfileBranche;
 import com.lemania.sis.server.bean.profilesubject.ProfileSubject;
 import com.lemania.sis.server.bean.student.Student;
 import com.lemania.sis.server.service.MyDAOBase;
@@ -59,6 +59,8 @@ public class BulletinSubjectDao extends MyDAOBase {
 			}
 			//
 			bulletinSubject.setSubjectName( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName() );
+			bulletinSubject.setSubjectName2( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName2() );
+			//
 			bulletinSubject.setSubjectId( Long.toString(
 					ofy().load().key( bulletinSubject.getSubject()).now().getId() ));
 			bulletinSubject.setClassId( Long.toString( 
@@ -91,6 +93,8 @@ public class BulletinSubjectDao extends MyDAOBase {
 			}
 			//
 			bulletinSubject.setSubjectName( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName() );
+			bulletinSubject.setSubjectName2( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName2() );
+			//
 			bulletinSubject.setSubjectId( Long.toString(
 					ofy().load().key( bulletinSubject.getSubject()).now().getId() ));
 			bulletinSubject.setClassId( Long.toString( 
@@ -124,7 +128,9 @@ public class BulletinSubjectDao extends MyDAOBase {
 				bulletinSubject.setProf2Id( Long.toString( bulletinSubject.getProfessor2().getId() ));
 			}
 			//
-			bulletinSubject.setSubjectName( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName() );	
+			bulletinSubject.setSubjectName( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName() );
+			bulletinSubject.setSubjectName2( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName2() );
+			//
 			bulletinSubject.setSubjectId( Long.toString(
 					ofy().load().key( bulletinSubject.getSubject()).now().getId() ));
 			bulletinSubject.setClassId( Long.toString( 
@@ -160,6 +166,8 @@ public class BulletinSubjectDao extends MyDAOBase {
 			}
 			//
 			bulletinSubject.setSubjectName( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName() );	
+			bulletinSubject.setSubjectName2( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName2() );	
+			//
 			bulletinSubject.setSubjectId( Long.toString(
 					ofy().load().key( bulletinSubject.getSubject()).now().getId() ));
 			bulletinSubject.setClassId( Long.toString( 
@@ -197,6 +205,8 @@ public class BulletinSubjectDao extends MyDAOBase {
 			}
 			//
 			bulletinSubject.setSubjectName( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName() );	
+			bulletinSubject.setSubjectName2( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName2() );	
+			//
 			bulletinSubject.setSubjectId( Long.toString(
 					ofy().load().key( bulletinSubject.getSubject()).now().getId() ));
 			bulletinSubject.setClassId( Long.toString( 
@@ -247,6 +257,8 @@ public class BulletinSubjectDao extends MyDAOBase {
 			}
 			//
 			bulletinSubject.setSubjectName( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName() );	
+			bulletinSubject.setSubjectName2( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName2() );	
+			//
 			bulletinSubject.setSubjectId( Long.toString(
 					ofy().load().key( bulletinSubject.getSubject()).now().getId() ));
 			bulletinSubject.setClassId( Long.toString( 
@@ -320,6 +332,8 @@ public class BulletinSubjectDao extends MyDAOBase {
 						}
 						//
 						bulletinSubject.setSubjectName( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName() );	
+						bulletinSubject.setSubjectName2( ofy().load().key( bulletinSubject.getSubject()).now().getSubjectName2() );	
+						//
 						bulletinSubject.setSubjectId( Long.toString(
 								ofy().load().key( bulletinSubject.getSubject()).now().getId() ));
 						bulletinSubject.setClassId( Long.toString( 
@@ -381,6 +395,7 @@ public class BulletinSubjectDao extends MyDAOBase {
 			if (ps.getProfessor() != null)
 				ps.setProfName( ofy().load().key(ps.getProfessor()).now().getProfName() );
 			ps.setSubjectName( ofy().load().key( ps.getSubject()).now().getSubjectName() );
+			ps.setSubjectName2( ofy().load().key( ps.getSubject()).now().getSubjectName2() );
 			ps.setStudentName(ofy().load().key(ps.getBulletin()).now().getStudentName());
 			//
 			Query<BulletinBranche> qBranche = ofy().load().type(BulletinBranche.class)
@@ -676,6 +691,8 @@ public class BulletinSubjectDao extends MyDAOBase {
 		}
 		
 		ps.setSubjectName( ofy().load().key( ps.getSubject()).now().getSubjectName() );
+		ps.setSubjectName2( ofy().load().key( ps.getSubject()).now().getSubjectName2() );
+		
 		ps.setSubjectCoef( Double.parseDouble(subjectCoef));
 		
 		Key<BulletinSubject> key = ofy().save().entities( ps ).now().keySet().iterator().next();
@@ -722,6 +739,7 @@ public class BulletinSubjectDao extends MyDAOBase {
 			curBulletinBranche.setBulletinBranche( profileBranche.getProfileBranche() );
 			curBulletinBranche.setBrancheCoef( profileBranche.getBrancheCoef() );
 			curBulletinBranche.setBulletinBrancheName( profileBranche.getProfileBrancheName() );
+			curBulletinBranche.setBulletinBrancheName2( profileBranche.getProfileBrancheName2() );
 			curBulletinBranche.setBulletinSubject( key );
 			ofy().save().entities(curBulletinBranche);
 			//

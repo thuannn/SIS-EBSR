@@ -4,8 +4,8 @@ import com.googlecode.objectify.Key;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.IgnoreSave;
 import com.googlecode.objectify.annotation.Index;
-import com.lemania.sis.server.Branche;
 import com.lemania.sis.server.DatastoreObject;
+import com.lemania.sis.server.bean.branche.Branche;
 import com.lemania.sis.server.bean.bulletinsubject.BulletinSubject;
 
 @Entity
@@ -16,6 +16,7 @@ public class BulletinBranche extends DatastoreObject implements Comparable<Bulle
 	private Key<Branche> bulletinBranche;
 	//
 	private String bulletinBrancheName;
+	private String bulletinBrancheName2;
 	private Double brancheCoef;
 	//
 	private String t1_1 = "";
@@ -295,5 +296,13 @@ public class BulletinBranche extends DatastoreObject implements Comparable<Bulle
 
 	public void setT4(String t4) {
 		T4 = t4;
+	}
+
+	public String getBulletinBrancheName2() {
+		return bulletinBrancheName2;
+	}
+
+	public void setBulletinBrancheName2(String bulletinBrancheName2) {
+		this.bulletinBrancheName2 = bulletinBrancheName2;
 	}
 }

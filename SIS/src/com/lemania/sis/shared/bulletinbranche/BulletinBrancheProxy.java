@@ -15,6 +15,9 @@ public interface BulletinBrancheProxy extends EntityProxy {
 
 	public String getBulletinBrancheName();
 	public void setBulletinBrancheName(String bulletinBrancheName);
+	
+	public String getBulletinBrancheName2();
+	public void setBulletinBrancheName2(String bulletinBrancheName2);
 
 	//
 	public String getT1_1();

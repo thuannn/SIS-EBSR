@@ -23,9 +23,9 @@ import com.google.web.bindery.event.shared.EventBus;
 import com.google.gwt.user.client.Window;
 import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 import com.lemania.sis.client.values.NotificationValues;
-import com.lemania.sis.shared.BrancheProxy;
-import com.lemania.sis.shared.service.BrancheRequestFactory;
-import com.lemania.sis.shared.service.BrancheRequestFactory.BrancheRequestContext;
+import com.lemania.sis.shared.branche.BrancheProxy;
+import com.lemania.sis.shared.branche.BrancheRequestFactory;
+import com.lemania.sis.shared.branche.BrancheRequestFactory.BrancheRequestContext;
 import com.lemania.sis.shared.service.EventSourceRequestTransport;
 
 public class FrmBrancheAddPresenter
@@ -84,7 +84,7 @@ public class FrmBrancheAddPresenter
 
 	
 	@Override
-	public void addNewBranche(String brancheName, String brancheCoef, Boolean brancheActive) {
+	public void addNewBranche(String brancheName, String brancheName2, String brancheCoef, Boolean brancheActive) {
 		//
 		if (this.currentUser.isReadOnly()){
 			Window.alert(NotificationValues.readOnly);
@@ -112,6 +112,7 @@ public class FrmBrancheAddPresenter
 		
 		BrancheProxy ep = rc.create(BrancheProxy.class);
 		ep.setBrancheName( brancheName );
+		ep.setBrancheName2( brancheName2 );
 		ep.setDefaultCoef( Double.parseDouble(brancheCoef) );
 		ep.setIsActive( brancheActive );
 		rc.save(ep).fire( new Receiver<Void>() {

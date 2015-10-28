@@ -32,6 +32,7 @@ public class FrmBrancheAddView extends ViewWithUiHandlers<FrmBrancheAddUiHandler
 	}
 	@UiField Button cmdSave;
 	@UiField TextBox txtBrancheName;
+	@UiField TextBox txtBrancheName2;
 	@UiField TextBox txtBrancheCoef;
 	@UiField Label lblStatus;
 	@UiField CheckBox chkBrancheActive;
@@ -39,7 +40,11 @@ public class FrmBrancheAddView extends ViewWithUiHandlers<FrmBrancheAddUiHandler
 	@UiHandler("cmdSave")
 	void onCmdSaveClick(ClickEvent event) {
 		if (getUiHandlers() != null) {
-			getUiHandlers().addNewBranche(txtBrancheName.getText(), txtBrancheCoef.getText(), chkBrancheActive.getValue());
+			getUiHandlers().addNewBranche(
+					txtBrancheName.getText(),
+					txtBrancheName2.getText(),
+					txtBrancheCoef.getText(), 
+					chkBrancheActive.getValue());
 		}
 	}
 
@@ -61,6 +66,7 @@ public class FrmBrancheAddView extends ViewWithUiHandlers<FrmBrancheAddUiHandler
 	public void resetForm() {
 		// 
 		txtBrancheName.setText("");
+		txtBrancheName2.setText("");
 		txtBrancheCoef.setText("");
 		chkBrancheActive.setValue(true);
 	}
